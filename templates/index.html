@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon Card Tracker</title>
+</head>
+<body>
+    <h1>Pokémon Card Tracker</h1>
+    <form method="POST">
+        Card Name: <input type="text" name="card_name"><br>
+        Set Name: <input type="text" name="set_name"><br>
+        <input type="submit" value="Search">
+    </form>
+
+    <h2>Results:</h2>
+    {% for card in results %}
+        <p>
+            Name: {{ card.name }}<br>
+            Set: {{ card.set }}<br>
+            {% if card.prices %}
+                Avg Price: ${{ card.prices.avg }}<br>
+                Low Price: ${{ card.prices.low }}<br>
+                High Price: ${{ card.prices.high }}<br>
+                Market Price: ${{ card.prices.market }}<br>
+            {% else %}
+                Price: Not available<br>
+            {% endif %}
+        </p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
