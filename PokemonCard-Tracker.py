@@ -22,6 +22,8 @@ def home():
                 for card in data["data"]:
                     card_name = card.get("name", "Unknown")
                     card_set = card.get("set", {}).get("name", "Unknown")
+                    tcg_url = card.get("tcgplayer", {}).get("url", "N/A")
+                    lowest_listing_url = tcg_url + "?sortBy=price&sortDirection=asc" if tcg_url else ""
                     price_info = {}
                     if "tcgplayer" in card and card["tcgplayer"] and "prices" in card["tcgplayer"]:
                         prices = card["tcgplayer"]["prices"]
@@ -33,7 +35,7 @@ def home():
                                 "high": holo.get("high", "N/A"),
                                 "market": holo.get("market", "N/A")
                             }
-                    results.append({"name": card_name, "set": card_set, "prices": price_info})
+                    results.append({"name": card_name, "set": card_set, "prices": price_info, "lowest_listing_url":lowest_listing_url})
     return render_template("index.html", results=results)
     
 if __name__ == "__main__":
