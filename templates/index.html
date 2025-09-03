@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon Card Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='006.png') }}" alt="Logo">
+                 <span class="nav-text">Pokémon Tracker</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+   <main class="content">
+    <h1>Pokémon Card Tracker</h1>
+
+    <form method="POST" class="search-form">
+        <label for="card_name">Card Name:</label>
+        <input type="text" id="card_name" name="card_name">
+
+        <label for="set_name">Set Name:</label>
+        <input type="text" id="set_name" name="set_name">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <section class="results">
+        <h2>Results:</h2>
+        {% for card in results %}
+        <div class="card-result">
+            <p><strong>Name:</strong> {{ card.name }}</p>
+            <p><strong>Set:</strong> {{ card.set }}</p>
+            {% if card.prices %}
+                <p>Avg Price (API): ${{ card.prices.avg }}</p>
+                <p>Low Price (API): ${{ card.prices.low }}</p>
+                <p>High Price (API): ${{ card.prices.high }}</p>
+                <p>Market Price (API): ${{ card.prices.market }}</p>
+            {% else %}
+                <p>Price: Not available</p>
+            {% endif %}
+            {% if card.lowest_listing_url %}
+            <a href="{{ card.lowest_listing_url }}" target="_blank"> View Live Listings on TCGplayer</a>
+            <small>(Prices are from Pokémon TCG API snapshot; may differ from live listings.)</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
