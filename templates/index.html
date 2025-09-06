@@ -12,10 +12,14 @@
                 <img src="{{ url_for('static', filename='006.png') }}" alt="Logo">
                  <span class="nav-text">Pokémon Tracker</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+             <ul class="nav-links">
+                <li>
+                    <a href="https://github.com/DerekGoodman721" target="_blank" class="github-link">
+                        <img src="{{ url_for('static', filename='github.png') }}" alt="GitHub" class="github-logo">
+                    </a>
+                </li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
             </ul>
         </div>
     </nav>
@@ -38,7 +42,7 @@
         {% for card in results %}
         <div class="card-result">
             <p><strong>Name:</strong> {{ card.name }}</p>
-            <p><strong>Set:</strong> {{ card.set }}</p>
+            <p><strong>Set:</strong> {{ card.set }}</p> 
             {% if card.prices %}
                 <p>Avg Price (API): ${{ card.prices.avg }}</p>
                 <p>Low Price (API): ${{ card.prices.low }}</p>
