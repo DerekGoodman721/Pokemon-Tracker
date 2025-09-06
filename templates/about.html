@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon Card Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleTwo.css') }}">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='006.png') }}" alt="Logo">
+                 <span class="nav-text">Pokémon Tracker</span>
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="https://github.com/DerekGoodman721" target="_blank" class="github-link">
+                        <img src="{{ url_for('static', filename='github.png') }}" alt="GitHub" class="github-logo">
+                    </a>
+                </li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <div class="card">
+            <h1>About Pokémon Card Tracker</h1>
+            <hr>
+            <p>Welcome to the Pokémon Card Tracker! This application allows you to search for Pokémon trading cards and view their pricing information sourced from the Pokémon TCG API.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Search for Pokémon cards by name and set.</li>
+                <li>View average, low, high, and market prices for each card.</li>
+                <li>Access live listings on TCGplayer for the most up-to-date prices.</li>
+            </ul>
+            <br>
+            <h2>Data Source</h2>
+            <p>The pricing data is fetched from the <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>, which provides live information about Pokémon trading cards.</p>
+            <h2>Contact</h2>
+            <p>If you have any questions or feedback, feel free to reach out!</p>
+        </div>
+    </main>
+</body>
+</html>
