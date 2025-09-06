@@ -38,5 +38,4 @@ def home():
                     results.append({"name": card_name, "set": card_set, "prices": price_info, "lowest_listing_url":lowest_listing_url})
     return render_template("index.html", results=results)
     
-if __name__ == "__main__":
-    app.run(debug=True)
+
