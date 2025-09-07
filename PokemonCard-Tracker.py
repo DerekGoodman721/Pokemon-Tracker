@@ -37,4 +37,6 @@ def home():
                     results.append({"name": card_name, "set": card_set, "prices": price_info, "lowest_listing_url":lowest_listing_url})
     return render_template("index.html", results=results)
     
-
+@app.route("/about")
+def about():
+    return render_template("about.html")
