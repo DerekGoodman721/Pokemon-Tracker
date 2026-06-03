@@ -1,12 +1,20 @@
 # Pokemon-Tracker
 
+
+## Live Demo
+
+Access the deployed application here:  
+👉 https://your-deployment-link.com
+
+---
+
 ## Overview
 
 This is a Flask web application that allows users to search for Pokémon cards by card name and set name. The app fetches data from the Pokémon TCG API and displays relevant card details, including pricing information and links to purchase listings.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Search Pokémon cards by name and set  
 - Displays card name and set  
@@ -16,7 +24,7 @@ This is a Flask web application that allows users to search for Pokémon cards b
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Language:** Python  
 - **Framework:** Flask  
@@ -26,7 +34,7 @@ This is a Flask web application that allows users to search for Pokémon cards b
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 project-root/
@@ -42,7 +50,7 @@ project-root/
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. Clone the repository:
 ```bash
@@ -67,7 +75,7 @@ http://127.0.0.1:5000/
 
 ---
 
-## ▶️ Usage
+## Usage
 
 1. Enter a Pokémon card name  
 2. Enter a set name  
@@ -80,10 +88,10 @@ http://127.0.0.1:5000/
 
 ---
 
-## ✅ Requirements
+## Requirements
 - Python 3.10 or higher   
 ---
-## 📦 Dependencies
+## Dependencies
 ```
 flask
 requests
@@ -91,7 +99,7 @@ requests
 
 ---
 
-## 🎨 Styling (CSS)
+## Styling (CSS)
 The app uses a custom stylesheet located in:
 ```
 static/styles.css
