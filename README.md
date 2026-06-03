@@ -4,7 +4,7 @@
 ## Live Demo
 
 Access the deployed application here:  
-[https://your-deployment-link.com](https://pokemon-tracker-9ync.onrender.com)
+[https://pokemon-tracker.com](https://pokemon-tracker-9ync.onrender.com)
 
 ---
 
