@@ -4,7 +4,7 @@
 ## Live Demo
 
 Access the deployed application here:  
-👉 https://your-deployment-link.com
+https://your-deployment-link.com
 
 ---
 
